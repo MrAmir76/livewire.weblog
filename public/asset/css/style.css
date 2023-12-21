@@ -626,8 +626,7 @@ footer ul.social-bx a {
     height: 45px;
     border: none;
     width: 100%;
-    padding-left: 18px;
-    padding-right: 100px
+    padding-right: 10px
 }
 
 .search-2 input:focus {

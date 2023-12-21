@@ -10,7 +10,13 @@ class SearchBox extends Component
     public $searchInput = '';
 
 
-    public function mount()
+    public function updatedSearchInput(): void
+    {
+        $this->search();
+    }
+
+
+    public function mount(): void
     {
         $url = explode('/', url()->current());
         if (count($url) > 3 and $url[3] == 'search') {
@@ -18,10 +24,11 @@ class SearchBox extends Component
         }
     }
 
-    public function search()
+    public function search(): void
     {
         $this->validate(['searchInput' => 'required|string|min:2']);
-        $this->redirect(route('search', ['params' => $this->searchInput]), true);
+        $this->redirect(route('search',
+            ['params' => $this->searchInput]), true);
     }
 
     public function render()
